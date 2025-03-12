@@ -1,0 +1,2 @@
+# yahtzee
+Keeps scores
