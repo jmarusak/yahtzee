@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee Score Keeper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="players">
+            <div class="player">
+                <input type="text" class="player-name" placeholder="Player 1">
+                <button class="score-button" data-player="0">0</button>
+            </div>
+            <div class="player">
+                <input type="text" class="player-name" placeholder="Player 2">
+                <button class="score-button" data-player="1">0</button>
+            </div>
+            <div class="player">
+                <input type="text" class="player-name" placeholder="Player 3">
+                <button class="score-button" data-player="2">0</button>
+            </div>
+            <div class="player">
+                <input type="text" class="player-name" placeholder="Player 4">
+                <button class="score-button" data-player="3">0</button>
+            </div>
+        </div>
+        <div class="calc-display">
+            <div class="calc-operation"></div>
+            <div class="calc-input">0</div>
+        </div>
+        <div class="calculator">
+            <div class="calc-row">
+                <button class="calc-button">7</button>
+                <button class="calc-button">8</button>
+                <button class="calc-button">9</button>
+            </div>
+            <div class="calc-row">
+                <button class="calc-button">4</button>
+                <button class="calc-button">5</button>
+                <button class="calc-button">6</button>
+            </div>
+            <div class="calc-row">
+                <button class="calc-button">1</button>
+                <button class="calc-button">2</button>
+                <button class="calc-button">3</button>
+            </div>
+            <div class="calc-row">
+                <button class="calc-button">0</button>
+                <button class="calc-button">+</button>
+                <button class="calc-button">-</button>
+            </div>
+            <div class="calc-row">
+                <button class="calc-button clear">Clear</button>
+                <button class="calc-button enter">Enter</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
