@@ -25,7 +25,7 @@
 
 .score-button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 24px;
     background-color: #f0f0f0;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -53,7 +53,7 @@
 
 .calc-button {
     padding: 15px;
-    font-size: 18px;
+    font-size: 20px;
     width: 60px;
     background-color: white;
     border: 1px solid #ccc;
@@ -65,21 +65,25 @@
     background-color: #e0e0e0;
 }
 
-.calc-button.clear, .calc-button.enter {
+.calc-button.update, .calc-button.back, .calc-button.reset {
     width: 92px;
 }
 
-.calc-button.enter {
+.calc-button.update {
     background-color: #4CAF50;
     color: white;
 }
 
-.calc-button.clear {
+.calc-button.back {
+    background-color: #f4d136;
+    color: white;
+}
+
+.calc-button.reset {
     background-color: #f44336;
     color: white;
 }
 
-/* Add these styles for the calculator display */
 .calc-display {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -87,12 +91,6 @@
     margin-bottom: 10px;
     padding: 10px;
     text-align: right;
-}
-
-.calc-operation {
-    color: #666;
-    font-size: 14px;
-    min-height: 20px;
 }
 
 .calc-input {

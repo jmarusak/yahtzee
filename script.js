@@ -1,6 +1,6 @@
 let selectedPlayer = null;
 let currentInput = '';
-let operation = null;
+let operation = '+';
 
 // Initialize scores array
 const scores = [0, 0, 0, 0];
@@ -11,13 +11,12 @@ const calcButtons = document.querySelectorAll('.calc-button');
 
 // Add these functions at the beginning of the file
 function updateDisplay() {
-    const operationDisplay = document.querySelector('.calc-operation');
     const inputDisplay = document.querySelector('.calc-input');
     
     if (selectedPlayer !== null) {
         const playerScore = scores[selectedPlayer];
-        operationDisplay.textContent = operation ? `${playerScore} ${operation}` : playerScore;
-        inputDisplay.textContent = currentInput || '0';
+        const lastScore = operation ? `${playerScore} ${operation}` : playerScore;
+        inputDisplay.textContent = lastScore + ' ' + currentInput || '0';
     } else {
         operationDisplay.textContent = '';
         inputDisplay.textContent = '0';
@@ -32,9 +31,7 @@ scoreButtons.forEach(button => {
         // Add selected class to clicked button
         button.classList.add('selected');
         selectedPlayer = parseInt(button.dataset.player);
-        currentInput = '';
-        operation = null;
-        updateDisplay();
+        updateDisplay()
     });
 });
 
@@ -45,14 +42,23 @@ calcButtons.forEach(button => {
 
         const value = button.textContent;
 
-        if (value === 'Clear') {
+        if (value === 'Reset') {
+            scores.fill(0)
+            scoreButtons.forEach(button => button.textContent = '0')
             currentInput = '';
-            operation = null;
+            operation = '+';
             updateDisplay();
             return;
         }
 
-        if (value === 'Enter') {
+        if (value === 'Back') {
+            currentInput = '';
+            operation = '+';
+            updateDisplay();
+            return;
+        }
+
+        if (value === 'Update') {
             if (operation && currentInput) {
                 const num = parseInt(currentInput);
                 if (operation === '+') {
@@ -62,7 +68,7 @@ calcButtons.forEach(button => {
                 }
                 scoreButtons[selectedPlayer].textContent = scores[selectedPlayer];
                 currentInput = '';
-                operation = null;
+                operation = '+';
                 updateDisplay();
             }
             return;
