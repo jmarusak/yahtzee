@@ -7,7 +7,7 @@ function resetOperation() {
 }
 
 // Initialize scores array
-const scores = [0, 0, 0, 0];
+const scores = [0, 0];
 
 // Get all score buttons and calculator buttons
 const scoreButtons = document.querySelectorAll('.score-button');
