@@ -2,6 +2,10 @@ let selectedPlayer = null;
 let currentInput = '';
 let operation = '+';
 
+function resetOperation() {
+    operation = '+';
+}
+
 // Initialize scores array
 const scores = [0, 0, 0, 0];
 
@@ -53,7 +57,7 @@ calcButtons.forEach(button => {
 
         if (value === 'Back') {
             currentInput = '';
-            operation = '+';
+            resetOperation();
             updateDisplay();
             return;
         }
@@ -68,7 +72,7 @@ calcButtons.forEach(button => {
                 }
                 scoreButtons[selectedPlayer].textContent = scores[selectedPlayer];
                 currentInput = '';
-                operation = '+';
+                resetOperation();
                 updateDisplay();
             }
             return;
